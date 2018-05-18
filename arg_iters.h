@@ -133,14 +133,15 @@ namespace cli
       /** Inner index() gets the index : int, the outer use the value to locate the value */
       if constexpr (std::is_integral_v<T>)
       {
-         /// TODO: Handle other integral types
          if (ret)
             return atoi(ret);
+         return 0;
       }
       else
       {
          if (ret)
             return ret;
+         return nullptr;
       }
       //throw std::runtime_error("No Value For Specified Arguement");
    }
